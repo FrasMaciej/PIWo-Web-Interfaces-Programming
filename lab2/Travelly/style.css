@@ -23,12 +23,12 @@
     --shadow: 0px 4px 16px rgba(67, 81, 80, 0.1);
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -37,12 +37,12 @@ html{
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(12,1fr);
+    grid-template-columns: repeat(12, 1fr);
     margin: 0px 100px;
     column-gap: 20px;
 }
 
-.navbar{
+.navbar {
     background-color: var(--white);
     padding: 1.5rem 100px;
     position: fixed;
@@ -53,13 +53,13 @@ html{
     justify-content: space-between;
 }
 
-.logo{
+.logo {
     color: var(--copy-green);
     font-weight: bold;
     font-size: var(--large-font-size);
 }
 
-.menu{
+.menu {
     display: flex;
     flex-direction: row;
     column-gap: 1rem;
@@ -67,7 +67,7 @@ html{
     list-style-type: none;
 }
 
-.menu-item{
+.menu-item {
     color: var(--copy-green);
     font-size: var(--small-font-size);
     text-decoration: none;
@@ -93,7 +93,7 @@ p {
     letter-spacing: 0.5px;
 }
 
-i{
+i {
     padding: 0.5rem 0.5rem 0.5rem 0rem;
 }
 
@@ -109,7 +109,7 @@ i{
     color: var(--copy-orange);
 }
 
-.bold{
+.bold {
     font-weight: bold;
 }
 
@@ -118,7 +118,7 @@ i{
     padding-top: 50px;
 }
 
-.hero-image{
+.hero-image {
     height: 85vh;
     grid-column: 1/13;
     display: flex;
@@ -133,6 +133,7 @@ i{
     background-size: cover;
     background-position: right center;
 }
+
 .welcome-text {
     display: flex;
     flex-direction: column;
@@ -142,7 +143,7 @@ i{
     width: 100%;
 }
 
-.search-container{
+.search-container {
     background-color: var(--white);
     display: flex;
     flex-direction: row;
@@ -166,14 +167,14 @@ input::placeholder {
     opacity: 1 0;
 }
 
-input:focus{
+input:focus {
     border-bottom: 1px solid var(--primary-green);
     outline: none;
     font-size: var(--medium-font-size);
 }
 
 
-button{
+button {
     border: none;
     outline: none;
     padding: 1rem 1.5rem;
@@ -218,49 +219,49 @@ button{
     justify-content: flex-start;
 }
 
-.about-text > button {
+.about-text>button {
     align-self: flex-start;
 }
 
-.about-image{
+.about-image {
     grid-column: 7/13;
     width: 80%;
     align-self: center;
     justify-self: center;
 }
 
-.destinations-section{
-    grid-template-rows: 0.2fr repeat(3,1fr);
+.destinations-section {
+    grid-template-rows: 0.2fr repeat(3, 1fr);
     background-color: var(--secondary-orange);
     margin: 0;
-    padding:  100px 100px;
+    padding: 100px 100px;
     height: auto;
     row-gap: 20px;
 }
 
-.destinations-text{
+.destinations-text {
     grid-area: 1/1/2/13;
     justify-self: center;
 }
 
-.card{
+.card {
     display: flex;
     background-color: var(--white);
     border-radius: var(--outer-radius);
     padding: 1.5rem;
 }
 
-.card[mode="horizontal"]{
+.card[mode="horizontal"] {
     flex-direction: row;
     column-gap: 1rem;
 }
 
-.card[mode="vertical"]{
+.card[mode="vertical"] {
     flex-direction: column;
     row-gap: 1rem;
 }
 
-.destination-image-container{
+.destination-image-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -269,26 +270,27 @@ button{
     border-radius: var(--inner-radius);
 }
 
-.destination-image-container[mode="vertical"]{
+.destination-image-container[mode="vertical"] {
     height: 250px;
     width: 100%;
 }
 
-.destination-image-container[mode="horizontal"]{
+.destination-image-container[mode="horizontal"] {
     width: 110px;
     flex-shrink: 0;
     height: 100%;
 }
 
-.destination-image{
+.destination-image {
     max-width: 100%;
     object-fit: cover;
 }
-.destination-image[mode="horizontal"]{
+
+.destination-image[mode="horizontal"] {
     height: 100%;
 }
 
-.destination-content{
+.destination-content {
     display: flex;
     flex-direction: column;
     row-gap: 0.25rem;
@@ -296,13 +298,13 @@ button{
     justify-content: space-between;
 }
 
-.destination-card-header{
+.destination-card-header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.destination-card-footer{
+.destination-card-footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -310,12 +312,13 @@ button{
     justify-self: flex-end;
 }
 
-.card:hover{
+.card:hover {
     box-shadow: var(--shadow);
     transition: var(--hover-transition);
 }
 
-.card:hover .destination-image, .card:hover .review-image{
+.card:hover .destination-image,
+.card:hover .review-image {
     transform: scale(1.05);
     transition: var(--hover-transition);
 }
@@ -324,37 +327,43 @@ button{
 .card[type="destination"]:nth-of-type(1) {
     grid-area: 2/1/4/5;
 }
+
 .card[type="destination"]:nth-of-type(2) {
     grid-area: 4/1/5/5;
 }
+
 .card[type="destination"]:nth-of-type(3) {
     grid-area: 2/5/3/9;
 }
+
 .card[type="destination"]:nth-of-type(4) {
     grid-area: 3/5/4/9;
 }
+
 .card[type="destination"]:nth-of-type(5) {
     grid-area: 4/5/5/9;
 }
+
 .card[type="destination"]:nth-of-type(6) {
     grid-area: 2/9/3/13;
 }
+
 .card[type="destination"]:nth-of-type(7) {
     grid-area: 3/9/5/13;
 }
 
-.reviews-section{
+.reviews-section {
     min-height: 100vh;
     height: auto;
     padding: 100px 0px;
 }
 
-.reviews-section > h3{
+.reviews-section>h3 {
     grid-column: 1/10;
     padding-bottom: 50px;
 }
 
-.card[type="review"]{
+.card[type="review"] {
     box-shadow: var(--shadow);
     position: relative;
     display: flex;
@@ -366,17 +375,20 @@ button{
 .card[type="review"]:nth-of-type(1) {
     grid-column: 1/4;
 }
+
 .card[type="review"]:nth-of-type(2) {
     grid-column: 4/7;
 }
+
 .card[type="review"]:nth-of-type(3) {
     grid-column: 7/10;
 }
+
 .card[type="review"]:nth-of-type(4) {
     grid-column: 10/13;
 }
 
-.review-image-container{
+.review-image-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -387,19 +399,19 @@ button{
     border-radius: var(--inner-radius);
 }
 
-.review-image{
+.review-image {
     max-width: 100%;
     object-fit: cover;
 }
 
 
-.footer-section{
+.footer-section {
     height: auto;
     padding: 100px 0px;
     row-gap: 2rem;
 }
 
-.contact-details-container{
+.contact-details-container {
     background-color: var(--secondary-orange);
     border-radius: var(--outer-radius);
     grid-column: 1/13;
@@ -410,7 +422,8 @@ button{
     padding-top: 50px;
     row-gap: 2rem;
 }
-.contact-details{
+
+.contact-details {
     display: flex;
     flex-direction: row;
     column-gap: 1rem;
@@ -419,7 +432,7 @@ button{
     color: var(--copy-orange);
 }
 
-.footer-image{
+.footer-image {
     grid-column: 3/11;
     height: 250px;
     border-radius: var(--outer-radius);
@@ -433,32 +446,34 @@ button{
     margin-top: -175px;
 }
 
-.footer-image>img{
+.footer-image>img {
     max-width: 100%;
     margin-top: -150px;
 }
-.footer-section>.logo{
+
+.footer-section>.logo {
     grid-column: 1/13;
     align-self: center;
     justify-self: center;
 }
 
 @media screen and (max-width: 768px) {
-    .grid{
-        grid-template-columns: repeat(8,1fr);
+    .grid {
+        grid-template-columns: repeat(8, 1fr);
         margin: 0px 25px;
         column-gap: 10px;
     }
 
-    .navbar{
+    .navbar {
         padding: 1.5rem 25px;
         width: 100%;
     }
 
-    .menu{
+    .menu {
         column-gap: 0.5rem;
     }
-    .logo{
+
+    .logo {
         font-size: var(--medium-font-size);
     }
 
@@ -467,84 +482,92 @@ button{
         line-height: 32px;
     }
 
-    .welcome-text{
+    .welcome-text {
         row-gap: 0.25rem;
     }
 
-    .search-container{
+    .search-container {
         flex-direction: column;
         row-gap: 1rem;
     }
 
-    .about-section{
+    .about-section {
         row-gap: 25px;
     }
 
-    .about-text{
+    .about-text {
         grid-column: 1/9;
     }
 
-    .about-image{
+    .about-image {
         grid-column: 1/9;
         width: 100%;
     }
 
-    .destinations-section{
-        grid-template-rows: 0.1fr repeat(7,1fr);
+    .destinations-section {
+        grid-template-rows: 0.1fr repeat(7, 1fr);
         margin: 0;
         padding: 50px 25px;
         height: auto;
     }
-    .destinations-text{
+
+    .destinations-text {
         grid-area: 1/1/2/9;
     }
 
-    .card[mode="horizontal"]{
+    .card[mode="horizontal"] {
         flex-direction: column;
         row-gap: 1rem;
     }
-    .destination-image-container[mode="vertical"]{
+
+    .destination-image-container[mode="vertical"] {
         height: 150px;
     }
 
-    .destination-image-container[mode="horizontal"]{
+    .destination-image-container[mode="horizontal"] {
         height: 150px;
         width: 100%;
     }
 
-    .destination-image[mode="horizontal"]{
+    .destination-image[mode="horizontal"] {
         height: auto;
     }
 
     .card[type="destination"]:nth-of-type(1) {
         grid-area: 2/1/3/9;
     }
+
     .card[type="destination"]:nth-of-type(2) {
         grid-area: 3/1/4/9;
     }
+
     .card[type="destination"]:nth-of-type(3) {
         grid-area: 4/1/5/9;
     }
+
     .card[type="destination"]:nth-of-type(4) {
         grid-area: 5/1/6/9;
     }
+
     .card[type="destination"]:nth-of-type(5) {
         grid-area: 6/1/7/9;
     }
+
     .card[type="destination"]:nth-of-type(6) {
         grid-area: 7/1/8/9;
     }
+
     .card[type="destination"]:nth-of-type(7) {
         grid-area: 8/1/9/9;
     }
 
-    .reviews-section{
-        grid-template-rows: 0.1fr repeat(4,1fr);
+    .reviews-section {
+        grid-template-rows: 0.1fr repeat(4, 1fr);
         padding: 30px 0px;
         row-gap: 20px;
     }
 
-    .reviews-section > h3{
+    .reviews-section>h3 {
         grid-area: 1/1/2/9;
         padding-bottom: 20px;
     }
@@ -552,51 +575,54 @@ button{
     .card[type="review"]:nth-of-type(1) {
         grid-area: 2/1/3/9;
     }
+
     .card[type="review"]:nth-of-type(2) {
         grid-area: 3/1/4/9;
     }
+
     .card[type="review"]:nth-of-type(3) {
-        grid-area:  4/1/5/9;
+        grid-area: 4/1/5/9;
     }
+
     .card[type="review"]:nth-of-type(4) {
         grid-area: 5/1/6/9;
     }
 
-    .footer-section{
+    .footer-section {
         padding: 50px;
     }
 
-    .contact-details-container{
+    .contact-details-container {
         grid-column: 1/9;
         padding: 0px;
         height: 300px;
         padding: 1rem
     }
 
-    .contact-details{
+    .contact-details {
         flex-direction: column;
         align-items: center;
     }
 
-    .footer-image{
+    .footer-image {
         grid-column: 2/8;
         height: 150px;
         margin-top: -100px;
         max-width: 100%;
     }
 
-    .footer-image>img{
+    .footer-image>img {
         width: 100%;
-       height: 100%;
-       object-fit: cover;
-       margin-top: 0;
+        height: 100%;
+        object-fit: cover;
+        margin-top: 0;
     }
 
-    .footer-section>.logo{
+    .footer-section>.logo {
         grid-column: 1/9;
     }
 
-    .footer-text{
+    .footer-text {
         text-align: center;
     }
 }

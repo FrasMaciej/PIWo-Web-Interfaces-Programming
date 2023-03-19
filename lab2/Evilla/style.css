@@ -8,6 +8,9 @@
     --yellow: #FFC044;
     --beige: #FFF8E4;
     --white: #FFFFFF;
+    --dark-blue: #151E50;
+
+
 
     --large-font-size: 32px;
     --medium-font-size: 18px;
@@ -114,7 +117,6 @@ a {
 
 
 .about-section {
-    grid-template-rows: 0.2fr repeat(3, 1fr);
     background-color: var(--secondary-orange);
     margin: 0;
     padding: 100px 100px;
@@ -123,8 +125,13 @@ a {
 }
 
 .house-tours-section {
-    height: 100vh;
-    display: grid;
+    height: auto;
+    grid-template-rows: 0.2fr repeat(3, 1fr);
+    background-color: var(--light-gray);
+    padding: 100px 100px;
+    row-gap: 20px;
+    margin: 0;
+
 }
 
 .contact-section {
@@ -280,6 +287,7 @@ input {
     background-color: var(--white);
     border-radius: var(--outer-radius);
     padding: 1.5rem;
+    border-radius: 8px;
 }
 
 .card[mode="horizontal"] {
@@ -290,4 +298,108 @@ input {
 .card[mode="vertical"] {
     flex-direction: column;
     row-gap: 1rem;
+}
+
+.house-tours-text {
+    grid-area: 1/1/2/13;
+    justify-self: center;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.card[type="house"]:nth-of-type(1) {
+    grid-area: 2/1/13/5;
+}
+
+.card[type="house"]:nth-of-type(2) {
+    grid-area: 2/5/5/9;
+}
+
+.card[type="house"]:nth-of-type(3) {
+    grid-area: 5/5/13/9;
+}
+
+.card[type="house"]:nth-of-type(4) {
+    grid-area: 2/9/13/13;
+}
+
+.book-house-image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: var(--inner-radius);
+}
+
+.book-house-image-container[mode="vertical"] {
+    height: 270px;
+    width: 190px;
+}
+
+.book-house-image-container[mode="horizontal"] {
+    height: 387px;
+    width: 100%;
+}
+
+.book-house-image {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+img {
+    border-radius: 4px;
+}
+
+i {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.address-text {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    flex: 1 1;
+    text-align: left;
+    margin-top: 36px;
+}
+
+article {
+    color: var(--dark-blue)
+}
+
+.buy {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book {
+    background-color: var(--light-blue);
+    width: 159px;
+    height: 50px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+}
+
+.price {
+    font-weight: 700;
+    color: var(--light-brown)
+}
+
+.property-description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+button {
+    cursor: pointer;
 }
