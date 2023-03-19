@@ -27,6 +27,17 @@ html {
     font-family: 'Montserrat', sans-serif;
 }
 
+a {
+    color: var(--black);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin: 0px 100px;
+    column-gap: 20px;
+}
+
 .navbar {
     background-color: var(--white);
     padding: 1.5rem 100px;
@@ -59,6 +70,114 @@ html {
     border-radius: 4px;
 }
 
-a {
-    color: var(--black);
+.hero-section {
+    height: 100vh;
+    display: grid;
+}
+
+.hero-image {
+    width: 568px;
+    height: 760px;
+    grid-column: 7/12;
+    margin-top: 93px;
+}
+
+.hero-dots {
+    height: 114px;
+    width: 270px;
+    margin-top: 235px;
+    margin-bottom: 40px;
+    background-image: url("./assets/dots\ hero\ section.svg");
+}
+
+.main-text {
+    width: 560px;
+    height: 64px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 64px;
+    margin-left: 38px;
+    position: absolute;
+}
+
+.subtitle {
+    position: absolute;
+    width: 480px;
+    height: 64px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 64px;
+    margin-top: 38px;
+    margin-left: 60px;
+}
+
+.about-section {
+    height: 100vh;
+    display: grid;
+}
+
+.house-tours-section {
+    height: 100vh;
+    display: grid;
+}
+
+.contact-section {
+    height: 100vh;
+    display: grid;
+}
+
+.booking-section {
+    height: 100vh;
+    display: grid;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2/3;
+}
+
+.under-password-texts {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    box-sizing: border-box;
+    width: 560px;
+    height: 64px;
+    background: #FFFFFF;
+    border: 1px solid #98A9FF;
+    border-radius: 4px;
+}
+
+.input-label {
+    margin-bottom: 8px;
+}
+
+.register-text {
+    color: var(--light-brown)
+}
+
+.v-space {
+    margin-bottom: 40px;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+}
+
+.login-button {
+    margin-top: 40px;
+    width: 80px;
+    height: 50px;
+    background: #FFC044;
+    border-radius: 4px;
+    border: none;
+}
+
+.login-button:hover {
+    cursor: pointer;
 }
