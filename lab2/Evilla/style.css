@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --black: #3B3B3B;
+    --light-gray: #E5EEFF;
+    --light-blue: #A5B3FF;
+    --light-brown: #6C4801;
+    --yellow: #FFC044;
+    --beige: #FFF8E4;
+    --white: #FFFFFF;
+
+    --large-font-size: 32px;
+    --medium-font-size: 18px;
+    --small-font-size: 16px;
+
+}
+
+html {
+    scroll-behavior: smooth;
+    color: var(--gray)
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    background-color: var(--white);
+    padding: 1.5rem 100px;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    column-gap: 48px;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.menu-item {
+    text-decoration: none;
+}
+
+.book-a-meeting {
+    padding: 15px;
+    gap: 10px;
+    width: 159px;
+    height: 50px;
+    background: var(--yellow);
+    border-radius: 4px;
+}
+
+a {
+    color: var(--black);
+}
