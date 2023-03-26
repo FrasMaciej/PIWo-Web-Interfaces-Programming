@@ -3,6 +3,7 @@
     font-size: 16px;
     ;
     font-family: 'Montserrat', sans-serif;
+    background-color: #e5eaf5;
 }
 
 .menu {
@@ -33,4 +34,15 @@
     border-radius: 10px;
 }
 
-#todos-list {}
+ul {
+    cursor: pointer;
+}
+
+li:hover {
+    color: green;
+}
+
+.checked {
+    text-decoration: line-through;
+    color: gray;
+}
