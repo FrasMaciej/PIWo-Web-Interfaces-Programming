@@ -38,6 +38,10 @@ ul {
     cursor: pointer;
 }
 
+li {
+    margin-bottom: 10px;
+}
+
 li:hover {
     color: green;
 }
@@ -51,4 +55,14 @@ label {
     margin-left: 10px;
     pointer-events: none;
     display: inline-block;
+}
+
+.delete-button {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.delete-button:hover {
+    cursor: pointer;
+    background-color: rgb(212, 54, 54);
 }

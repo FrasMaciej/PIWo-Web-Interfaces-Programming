@@ -1,7 +1,12 @@
+"use strict"
 const list = document.getElementById('todos-list');
 const addTodo = (todo) => {
     if (todo) {
         const entry = document.createElement('li');
+        $(entry).append('<button class="delete-button">X</button>');
+        $('#todos-list').on('click', '.delete-button', (event) => {
+            $(event.currentTarget).parent().remove();
+        });
         entry.appendChild(document.createTextNode(todo));
         list.appendChild(entry);
     }
@@ -12,12 +17,12 @@ list.onclick = (event) => {
     const label = document.createElement('label');
 
     if (event.target.classList.contains('checked')) {
-        date = new Date();
-        minutes = date.getMinutes();
+        const date = new Date();
+        const minutes = date.getMinutes();
         if (minutes <= 9) {
             minutes = '0' + minutes
         }
-        hours = date.getHours();
+        const hours = date.getHours();
         if (hours <= 9) {
             hours = '0' + hours
         }
