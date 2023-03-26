@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+    ;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#add-todo-button {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    border-color: green;
+    background-color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#add-todo-button:hover {
+    background-color: green;
+    color: white;
+}
+
+#todo-input {
+    width: 400px;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+#todos-list {}
