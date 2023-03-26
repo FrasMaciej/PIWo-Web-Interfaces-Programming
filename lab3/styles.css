@@ -46,3 +46,9 @@ li:hover {
     text-decoration: line-through;
     color: gray;
 }
+
+label {
+    margin-left: 10px;
+    pointer-events: none;
+    display: inline-block;
+}
