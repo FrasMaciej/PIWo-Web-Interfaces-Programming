@@ -60,9 +60,21 @@ label {
 .delete-button {
     cursor: pointer;
     margin-right: 10px;
+    font-weight: 700;
 }
 
 .delete-button:hover {
     cursor: pointer;
     background-color: rgb(212, 54, 54);
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+#restore-removed-todo-button {
+    margin-left: 15px;
+    border-radius: 10px;
+    cursor: pointer;
 }

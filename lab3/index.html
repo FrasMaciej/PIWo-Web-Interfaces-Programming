@@ -8,14 +8,22 @@
     <link rel="stylesheet" href="styles.css">
     <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css”
         integrity=”sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU” crossorigin=”anonymous”>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>To-Do List</title>
 </head>
 
 <body>
     <div class="menu">
         <input id="todo-input">
-        <button type="button" id="add-todo-button" onclick="addTodo(document.getElementById('todo-input').value)">Add
-            new to-do</button>
+        <div class="menu-buttons">
+            <button type="button" id="add-todo-button"
+                onclick="addTodo(document.getElementById('todo-input').value)">Add
+                new to-do
+            </button>
+            <button type="button" id="restore-removed-todo-button" onclick="restoreTodo()">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+        </div>
     </div>
     <ul id="todos-list"></ul>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
