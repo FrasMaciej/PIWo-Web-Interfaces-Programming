@@ -112,19 +112,29 @@ const hideList = (listId) => {
 
 }
 
-const filterLists = (filterEnabled) => {
+const filterLists = (filterEnabled, clearFilter = false) => {
     if (filterEnabled) {
         const lists = [document.getElementById("todos-list-late"), document.getElementById("todos-list-now"), document.getElementById("todos-list-piwo")];
         const filterText = document.querySelector("#search-input").value;
         lists.forEach((list) => {
             let i = 0;
             list.childNodes.forEach((child) => {
-                if (child.outerText.substring(1).includes(filterText)) {
+                if (child.outerText.substring(1).includes(filterText) || clearFilter) {
                     document.getElementById(list.id).children[i].style.display = "block"
                 } else {
                     document.getElementById(list.id).children[i].style.display = "none"
                 }
+                i++;
             })
         });
     }
 }
+
+const checkbox = document.querySelector("#search-input-checkbox");
+checkbox.addEventListener('change', (event) => {
+    if (!checkbox.checked) {
+        filterLists(true, true);
+    } else {
+        filterLists(true);
+    }
+});
