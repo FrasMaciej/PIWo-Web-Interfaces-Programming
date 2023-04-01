@@ -3,22 +3,29 @@ let chosenList = 'todos-list-late';
 let list = document.getElementById(chosenList);
 const radioGroup = document.getElementById("radio-group");
 
-let lateList = [];
-let todoList = [];
-let piwoList = [];
-
 let lastRemovedTodo = null;
+let lastRemovedTodoList = null;
 let todoToRemove = null;
-const addTodo = (todo) => {
+const addTodo = (todo, restore = false) => {
     if (todo) {
+
+        let listToEdit = list
+        let listNameToPutTodo = chosenList;
+        if (restore) {
+            listNameToPutTodo = lastRemovedTodoList;
+            listToEdit = document.getElementById(listNameToPutTodo)
+        }
+
         const entry = document.createElement('li');
         $(entry).append('<button class="delete-button">X</button>');
         entry.appendChild(document.createTextNode(todo));
-        list.appendChild(entry);
-        $('#' + chosenList).on('click', '.delete-button', (event) => {
+        listToEdit.appendChild(entry);
+
+        $('#' + listNameToPutTodo).on('click', '.delete-button', (event) => {
             $('#modal').css("display", "block");
             todoToRemove = event.currentTarget;
             lastRemovedTodo = $(todoToRemove).parent().text().substring(1);
+            lastRemovedTodoList = $(todoToRemove).parent().parent()[0].id;
         });
 
     }
@@ -26,15 +33,27 @@ const addTodo = (todo) => {
 
 const restoreTodo = () => {
     if (lastRemovedTodo) {
-        addTodo(lastRemovedTodo);
+        addTodo(lastRemovedTodo, true);
         lastRemovedTodo = null;
+        lastRemovedTodoList = null;
         $('#restore-removed-todo-button').css("color", "red").css("cursor", "default");
     }
 }
 
-$('#' + chosenList).on('click', 'li', (event) => {
-    if (!event.target.classList.contains('delete-button')) {
+$('#' + 'todos-list-late').on('click', 'li', (event) => {
+    onListItemClick(event);
+});
 
+$('#' + 'todos-list-now').on('click', 'li', (event) => {
+    onListItemClick(event);
+});
+
+$('#' + 'todos-list-piwo').on('click', 'li', (event) => {
+    onListItemClick(event);
+});
+
+const onListItemClick = (event) => {
+    if (!event.target.classList.contains('delete-button')) {
         event.target.classList.toggle('checked');
         const label = document.createElement('label');
 
@@ -59,7 +78,7 @@ $('#' + chosenList).on('click', 'li', (event) => {
             label.classList.remove('date-label');
         }
     }
-});
+}
 
 const cancelRemovingTodo = () => {
     $('#modal').css("display", "none");
