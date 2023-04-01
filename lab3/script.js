@@ -111,3 +111,20 @@ const hideList = (listId) => {
     }
 
 }
+
+const filterLists = (filterEnabled) => {
+    if (filterEnabled) {
+        const lists = [document.getElementById("todos-list-late"), document.getElementById("todos-list-now"), document.getElementById("todos-list-piwo")];
+        const filterText = document.querySelector("#search-input").value;
+        lists.forEach((list) => {
+            let i = 0;
+            list.childNodes.forEach((child) => {
+                if (child.outerText.substring(1).includes(filterText)) {
+                    document.getElementById(list.id).children[i].style.display = "block"
+                } else {
+                    document.getElementById(list.id).children[i].style.display = "none"
+                }
+            })
+        });
+    }
+}

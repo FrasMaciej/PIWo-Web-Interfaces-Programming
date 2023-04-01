@@ -158,3 +158,23 @@ button {
 .list-button:hover {
     background-color: burlywood;
 }
+
+#search-input-container {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#search-input {
+    border-radius: 10px;
+    padding: 10px;
+    height: 30px;
+    width: 300px;
+}
+
+#search-input-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: -8px;
+}

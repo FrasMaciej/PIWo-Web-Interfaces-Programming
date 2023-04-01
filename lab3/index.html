@@ -32,6 +32,12 @@
             <input type="radio" id="piwo" name="todo_list_choice" value="todos-list-piwo">
             <label for="javascript">It's still time to drink PIWO</label>
         </div>
+        <div id="search-input-container">
+            <input id="search-input" oninput="filterLists(document.querySelector('#search-input-checkbox').checked)"
+                placeholder="Search here for your todos ...">
+            <input id="search-input-checkbox" type="checkbox">
+            <label for="search-input-checkbox">Use filter?</label>
+        </div>
     </div>
 
     <div class="todos-lists">
