@@ -21,11 +21,27 @@
                 new to-do
             </button>
             <button type="button" id="restore-removed-todo-button" onclick="restoreTodo()">
-                <i class="fa fa-trash" aria-hidden="true"></i>
+                <i class="fa fa-undo" aria-hidden="true"></i>
             </button>
         </div>
+        <div id="radio-group">
+            <input type="radio" id="late" name="todo_list_choice" value="todos-list-late" checked>
+            <label for="html">Too late ;(</label><br>
+            <input type="radio" id="now" name="todo_list_choice" value="todos-list-now">
+            <label for="css">Todo now!</label><br>
+            <input type="radio" id="piwo" name="todo_list_choice" value="todos-list-piwo">
+            <label for="javascript">It's still time to drink PIWO</label>
+        </div>
     </div>
-    <ul id="todos-list"></ul>
+
+    <div class="todos-lists">
+        <button class="list-button" id="late-list-button" onclick="hideList('todos-list-late')">Late</button>
+        <ul id="todos-list-late"></ul>
+        <button class="list-button" id="now-list-button" onclick="hideList('todos-list-now')">Now</button>
+        <ul id="todos-list-now"></ul>
+        <button class="list-button" id="piwo-list-button" onclick="hideList('todos-list-piwo')">Piwo</button>
+        <ul id="todos-list-piwo"></ul>
+    </div>
 
     <div id="modal">
         <div id="modal-position">

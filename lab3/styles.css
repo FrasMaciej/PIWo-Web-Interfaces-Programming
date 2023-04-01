@@ -76,7 +76,8 @@ label {
 #restore-removed-todo-button {
     margin-left: 15px;
     border-radius: 10px;
-    cursor: pointer;
+    cursor: default;
+    color: red;
 }
 
 #modal {
@@ -122,4 +123,38 @@ label {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#radio-group {
+    margin-top: 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+#todos-list-late {
+    display: block;
+}
+
+#todos-list-now {
+    display: block;
+}
+
+#todos-list-piwo {
+    display: block;
+}
+
+.todos-lists {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-button {
+    height: 30px;
+    width: 100px;
+}
+
+.list-button:hover {
+    background-color: burlywood;
 }

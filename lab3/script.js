@@ -1,5 +1,12 @@
 "use strict"
-const list = document.getElementById('todos-list');
+let chosenList = 'todos-list-late';
+let list = document.getElementById(chosenList);
+const radioGroup = document.getElementById("radio-group");
+
+let lateList = [];
+let todoList = [];
+let piwoList = [];
+
 let lastRemovedTodo = null;
 let todoToRemove = null;
 const addTodo = (todo) => {
@@ -8,10 +15,10 @@ const addTodo = (todo) => {
         $(entry).append('<button class="delete-button">X</button>');
         entry.appendChild(document.createTextNode(todo));
         list.appendChild(entry);
-        $('#todos-list').on('click', '.delete-button', (event) => {
+        $('#' + chosenList).on('click', '.delete-button', (event) => {
             $('#modal').css("display", "block");
-            lastRemovedTodo = todo;
             todoToRemove = event.currentTarget;
+            lastRemovedTodo = $(todoToRemove).parent().text().substring(1);
         });
 
     }
@@ -21,10 +28,11 @@ const restoreTodo = () => {
     if (lastRemovedTodo) {
         addTodo(lastRemovedTodo);
         lastRemovedTodo = null;
+        $('#restore-removed-todo-button').css("color", "red").css("cursor", "default");
     }
 }
 
-$('#todos-list').on('click', 'li', (event) => {
+$('#' + chosenList).on('click', 'li', (event) => {
     if (!event.target.classList.contains('delete-button')) {
 
         event.target.classList.toggle('checked');
@@ -62,4 +70,25 @@ const confirmRemovingTodo = () => {
         $(todoToRemove).parent().remove();
     }
     $('#modal').css("display", "none");
+    $('#restore-removed-todo-button').css("color", "green").css("cursor", "pointer");;
+}
+
+radioGroup.addEventListener('click', () => {
+    const radioGroup = document.getElementsByName('todo_list_choice');
+
+    radioGroup.forEach((radio) => {
+        if (radio.checked) {
+            chosenList = radio.value;
+            list = document.getElementById(chosenList);
+        }
+    })
+})
+
+const hideList = (listId) => {
+    if ($('#' + listId).css("display") === "none") {
+        $('#' + listId).css("display", "block");
+    } else {
+        $('#' + listId).css("display", "none");
+    }
+
 }
