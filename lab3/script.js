@@ -119,7 +119,7 @@ const filterLists = (filterEnabled, clearFilter = false) => {
         lists.forEach((list) => {
             let i = 0;
             list.childNodes.forEach((child) => {
-                if (child.outerText.substring(1).includes(filterText) || clearFilter) {
+                if (child.outerText.toLowerCase().substring(1).includes(filterText.toLowerCase()) || clearFilter) {
                     document.getElementById(list.id).children[i].style.display = "block"
                 } else {
                     document.getElementById(list.id).children[i].style.display = "none"
