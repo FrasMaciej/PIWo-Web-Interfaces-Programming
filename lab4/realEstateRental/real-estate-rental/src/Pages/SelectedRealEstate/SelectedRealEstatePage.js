@@ -51,7 +51,7 @@ const SelectedRealEstatePage = () => {
                         value={formik.values.message}
                     />
                     {formik.touched.message && formik.errors.message ? (
-                        <div>{formik.errors.message}</div>
+                        <div className="error">{formik.errors.message}</div>
                     ) : null}
                 </label>
                 <br />
@@ -66,7 +66,7 @@ const SelectedRealEstatePage = () => {
                         value={formik.values.email}
                     />
                     {formik.touched.email && formik.errors.email ? (
-                        <div>{formik.errors.email}</div>
+                        <div className="error">{formik.errors.email}</div>
                     ) : null}
                 </label>
                 <br />

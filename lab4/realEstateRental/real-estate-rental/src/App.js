@@ -26,14 +26,14 @@ function App() {
       <main>
         <BrowserRouter>
           <nav class="navigation-menu">
-            <NavLink style={{ textDecoration: 'none', }} to="real-estate-list">Real Estate List</NavLink>
+            <NavLink style={{ textDecoration: 'none', }} to="">Real Estate List</NavLink>
             <NavLink style={{ textDecoration: 'none', }} to="add-new-real-estate">Add new Real Estate</NavLink>
           </nav>
           <div class="line-container">
             <hr class="full-width-line" />
           </div>
           <Routes>
-            <Route path="/real-estate-list" element={<RealEstateListPage realEstateList={realEstateList} />} />
+            <Route path="/" element={<RealEstateListPage realEstateList={realEstateList} />} />
             <Route path="/add-new-real-estate" element={<AddNewRealEstatePage onAddRealEstate={handleAddRealEstate} />} />
             <Route path="/selected-real-estate/:id" element={<SelectedRealEstatePage />} />
           </Routes>
