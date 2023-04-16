@@ -64,6 +64,7 @@ const RealEstateForm = (props) => {
             <div className="form-group">
                 <label htmlFor="description">Price:</label>
                 <input
+                    type="number"
                     id="price"
                     value={price}
                     onChange={handlePriceChange}

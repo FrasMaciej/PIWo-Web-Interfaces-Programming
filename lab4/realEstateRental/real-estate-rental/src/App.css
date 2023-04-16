@@ -26,19 +26,11 @@ body {
 }
 
 a {
-  /* color: var(--text-color);
-  outline: 2px solid rgb(100, 34, 34);
-  padding: 10px;
-  border-radius: 15px;
-  background-color: var(--clickable-item-backgroud-color);
-  font-weight: 600; */
   text-decoration: none;
   color: var(--text-color);
 }
 
 a:hover {
-  /* background-color: var(--hover-background-color);
-  color: var(--hover-text-color); */
   text-decoration: none;
 }
 
@@ -163,3 +155,27 @@ a:visited {
 .sort-btn:hover {
   background-color: #3e8e41;
 }
+
+.book-meeting-btn {
+  background-color: transparent;
+  color: var(--line-color);
+  padding: 10px 20px;
+  border: 2px solid var(--line-color);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.book-meeting-btn:hover {
+  background-color: var(--line-color);
+  color: #fff;
+}
+
+.city-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+

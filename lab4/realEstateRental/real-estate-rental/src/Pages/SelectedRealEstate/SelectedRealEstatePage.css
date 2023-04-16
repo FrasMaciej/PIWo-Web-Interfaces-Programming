@@ -1,0 +1,57 @@
+.selected-real-estate-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.selected-real-estate-page h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.selected-real-estate-page p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.selected-real-estate-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.selected-real-estate-page textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.selected-real-estate-page input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.selected-real-estate-page button[type="submit"] {
+    background-color: #0077cc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.selected-real-estate-page div {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

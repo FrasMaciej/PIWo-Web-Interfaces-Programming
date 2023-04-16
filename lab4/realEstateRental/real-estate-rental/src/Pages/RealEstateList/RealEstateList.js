@@ -27,11 +27,11 @@ const RealEstateList = (props) => {
 
     const sortedRealEstateList = realEstateList.sort((a, b) => {
         if (sortByPrice === "ASC") {
-          return a.price - b.price;
+            return a.price - b.price;
         } else {
-          return b.price - a.price;
+            return b.price - a.price;
         }
-      });
+    });
 
     const filteredRealEstateList = sortedRealEstateList.filter(
         (realEstate) =>
