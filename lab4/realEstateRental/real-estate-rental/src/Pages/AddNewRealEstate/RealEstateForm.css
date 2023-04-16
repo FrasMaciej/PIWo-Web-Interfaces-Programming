@@ -1,0 +1,64 @@
+.real-estate-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.real-estate-form h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.real-estate-form .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.real-estate-form .form-group label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.real-estate-form input,
+.real-estate-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.real-estate-form input[type="number"]::-webkit-inner-spin-button,
+.real-estate-form input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.real-estate-form textarea {
+    height: 100px;
+}
+
+.real-estate-form button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #0077FF;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.real-estate-form button[type="submit"]:hover {
+    background-color: #0066CC;
+}
