@@ -43,25 +43,25 @@ const RealEstateList = (props) => {
     return (
         <div>
             <div className="search-bar">
-                <input class="search-input"
+                <input className="search-input"
                     type="text"
                     placeholder="City..."
                     value={cityQuery}
                     onChange={handleCityQueryChange}
                 />
-                <input class="search-input"
+                <input className="search-input"
                     type="text"
                     placeholder="Bedrooms..."
                     value={bedroomsQuery}
                     onChange={handleBedroomsQueryChange}
                 />
-                <input class="search-input"
+                <input className="search-input"
                     type="text"
                     placeholder="Description..."
                     value={descriptionQuery}
                     onChange={handleDescriptionQueryChange}
                 />
-                <button class="sort-btn" onClick={handleSortByPriceChange}>
+                <button className="sort-btn" onClick={handleSortByPriceChange}>
                     Sort by price {sortByPrice === "ASC" ? "descending" : "ascending"}
                 </button>
             </div>

@@ -9,7 +9,7 @@ const RealEstateListItem = (props) => {
                 <div className="real-estate-details">
                     <div class="city-button-container">
                         <div className="real-estate-city">{realEstate.city}</div>
-                        <button class="book-meeting-btn">Book meeting</button>
+                        <button className="book-meeting-btn">Book meeting</button>
                     </div>
                     <div className="real-estate-bedrooms">{realEstate.bedrooms} sypialnie</div>
                     <div className="real-estate-description">{realEstate.description}</div>

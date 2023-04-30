@@ -1,8 +1,13 @@
 import RealEstateList from "./RealEstateList";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const RealEstateListPage = (props) => {
+  // console.log(props.realEstateList);
   const [realEstateList, setRealEstateList] = useState(props.realEstateList);
+
+  useEffect(() => {
+    setRealEstateList(props.realEstateList);
+  }, [props.realEstateList]);
 
   return (
     <div className="real-estate-list-page">
