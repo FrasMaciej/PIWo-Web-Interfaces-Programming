@@ -18,7 +18,7 @@ body {
 
 .navigation-menu {
   display: grid;
-  grid-template-columns: 3.4fr 0.55fr 1.1fr 2.9fr 2fr;
+  grid-template-columns: 3.4fr 0.55fr 1.2fr 1.5fr 2fr 2fr;
   justify-content: center;
   margin-top: 10px;
   column-gap: 25px;
