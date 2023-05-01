@@ -7,7 +7,6 @@ const BasketPage = () => {
 
     const [state, dispatcher] = useContext(MyReducerContext);
 
-    console.log(state);
     return (
         <div className="basket-container">
             <h2 className="basket-heading">Followed adverts:</h2>

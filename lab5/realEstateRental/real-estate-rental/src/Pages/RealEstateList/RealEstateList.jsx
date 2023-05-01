@@ -1,5 +1,6 @@
 import { useState } from "react"
 import RealEstateListItem from "./RealEstateListItem";
+import useLocalStorage from "../SharedComponents/UseLocalStorage";
 
 const RealEstateList = (props) => {
     const realEstateList = props.realEstateList;
@@ -7,7 +8,6 @@ const RealEstateList = (props) => {
     const [bedroomsQuery, setBedroomsQuery] = useState("");
     const [descriptionQuery, setDescriptionQuery] = useState("");
     const [sortByPrice, setSortByPrice] = useState("ASC");
-
 
     const handleCityQueryChange = (event) => {
         setCityQuery(event.target.value);

@@ -5,10 +5,11 @@ import './LoginPage.css';
 import axios from 'axios';
 import RealEstateListPage from "../RealEstateList/RealEstateListPage";
 import { useNavigate } from "react-router-dom";
+import useLocalStorage from "../SharedComponents/UseLocalStorage";
 
 const LoginPage = () => {
-    const [userEmail, setUserEmail] = useState('');
-    const [userPassword, setUserPassword] = useState('');
+    const [userEmail, setUserEmail] = useLocalStorage('userEmail', '');
+    const [userPassword, setUserPassword] = useLocalStorage('userPassword', '');
     const [userName, setUserName] = useContext(UserContext);
     const navigate = useNavigate();
 
