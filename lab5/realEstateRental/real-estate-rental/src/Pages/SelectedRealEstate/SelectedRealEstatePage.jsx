@@ -24,8 +24,10 @@ const SelectedRealEstatePage = () => {
             .then(() => {
                 const success = Math.random() < 0.5;
                 if (success) {
+                    alert("Successfully sent message")
                     setMessage("Successfully sent message");
                 } else {
+                    alert("Message sending failed")
                     setMessage("Message sending failed");
                 }
             })

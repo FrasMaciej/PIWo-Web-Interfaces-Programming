@@ -17,12 +17,17 @@ body {
 }
 
 .navigation-menu {
-  display: flex;
+  display: grid;
+  grid-template-columns: 3.4fr 0.55fr 1.1fr 2.9fr 2fr;
   justify-content: center;
   margin-top: 10px;
   column-gap: 25px;
   text-decoration: none;
   margin-bottom: 10px;
+}
+
+.user-info {
+  align-self: flex-end;
 }
 
 a {
@@ -179,3 +184,21 @@ a:visited {
   justify-content: space-between;
 }
 
+.vertical-line-right {
+  border-right: solid #583c3c;
+}
+
+.nav-link-style {
+  padding: 1px 5px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-link-style:hover {
+  background-color: #87410f;
+  color: white;
+}
