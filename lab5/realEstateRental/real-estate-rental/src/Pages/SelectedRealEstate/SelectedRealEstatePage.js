@@ -1,38 +1,40 @@
 import { useLocation, useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import * as Yup from 'yup';
-import { useFormik } from 'formik';
 import './SelectedRealEstatePage.css';
 
 const SelectedRealEstatePage = () => {
     const { id } = useParams();
     const location = useLocation();
     const realEstate = location.state.realEstate;
-    console.log(realEstate);
-
     const [message, setMessage] = useState("");
+    const messageRef = useRef();
+    const emailRef = useRef();
 
     const validationSchema = Yup.object({
         email: Yup.string().email('Invalid email address').required('Required'),
         message: Yup.string().required('Required'),
     });
 
-    const formik = useFormik({
-        initialValues: {
-            email: '',
-            message: '',
-        },
-        validationSchema: validationSchema,
-        onSubmit: (values) => {
-            const success = Math.random() < 0.5;
-            if (success) {
-                setMessage("Successfuly Send");
-            } else {
-                setMessage("Message Sending Failed");
-            }
-        },
-    });
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const emailValue = emailRef.current.value;
+        const messageValue = messageRef.current.value;
+        validationSchema.validate({ email: emailValue, message: messageValue })
+            .then(() => {
+                const success = Math.random() < 0.5;
+                if (success) {
+                    setMessage("Successfully sent message");
+                } else {
+                    setMessage("Message sending failed");
+                }
+            })
+            .catch((error) => {
+                setMessage(error.message);
+            });
+    }
 
+    console.log('rendering');
     return (
         <div className="selected-real-estate-page">
             <h1>{realEstate.city}</h1>
@@ -40,19 +42,15 @@ const SelectedRealEstatePage = () => {
             <p>Bedrooms: {realEstate.bedrooms}</p>
             <p>Price: {realEstate.price} zł</p>
             <p>Seller: {realEstate.seller}</p>
-            <form onSubmit={formik.handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <label>
                     Your message:
                     <textarea
                         id="message"
                         name="message"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        value={formik.values.message}
+                        ref={messageRef}
+                        autoFocus
                     />
-                    {formik.touched.message && formik.errors.message ? (
-                        <div className="error">{formik.errors.message}</div>
-                    ) : null}
                 </label>
                 <br />
                 <label>
@@ -61,13 +59,8 @@ const SelectedRealEstatePage = () => {
                         type="email"
                         id="email"
                         name="email"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                        value={formik.values.email}
+                        ref={emailRef}
                     />
-                    {formik.touched.email && formik.errors.email ? (
-                        <div className="error">{formik.errors.email}</div>
-                    ) : null}
                 </label>
                 <br />
                 <button type="submit">Wyślij</button>
@@ -75,6 +68,7 @@ const SelectedRealEstatePage = () => {
             {message && <div>{message}</div>}
         </div>
     );
+
 };
 
 export default SelectedRealEstatePage;

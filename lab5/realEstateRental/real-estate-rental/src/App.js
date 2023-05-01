@@ -18,7 +18,6 @@ function App() {
   }, [])
 
   const handleAddRealEstate = (newRealEstate) => {
-    console.log(newRealEstate);
     const updatedList = [...realEstateList, newRealEstate];
     setRealEstateList(updatedList);
   };

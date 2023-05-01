@@ -2,7 +2,6 @@ import RealEstateList from "./RealEstateList";
 import { useState, useEffect } from "react";
 
 const RealEstateListPage = (props) => {
-  // console.log(props.realEstateList);
   const [realEstateList, setRealEstateList] = useState(props.realEstateList);
 
   useEffect(() => {

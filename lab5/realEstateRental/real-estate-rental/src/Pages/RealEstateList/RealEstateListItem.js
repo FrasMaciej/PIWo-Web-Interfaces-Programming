@@ -7,7 +7,7 @@ const RealEstateListItem = (props) => {
             <div >
                 <div className="real-estate-image"></div>
                 <div className="real-estate-details">
-                    <div class="city-button-container">
+                    <div className="city-button-container">
                         <div className="real-estate-city">{realEstate.city}</div>
                         <button className="book-meeting-btn">Book meeting</button>
                     </div>
