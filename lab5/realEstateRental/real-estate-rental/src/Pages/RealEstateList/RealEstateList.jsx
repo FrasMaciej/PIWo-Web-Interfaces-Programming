@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import RealEstateListItem from "./RealEstateListItem";
 import useLocalStorage from "../SharedComponents/UseLocalStorage";
 
@@ -25,13 +25,15 @@ const RealEstateList = (props) => {
         setSortByPrice(sortByPrice === "ASC" ? "DESC" : "ASC");
     };
 
-    const sortedRealEstateList = realEstateList.sort((a, b) => {
-        if (sortByPrice === "ASC") {
-            return a.price - b.price;
-        } else {
-            return b.price - a.price;
-        }
-    });
+    const sortedRealEstateList = useMemo(() => {
+        return realEstateList.sort((a, b) => {
+            if (sortByPrice === "ASC") {
+                return a.price.toString().localeCompare(b.price.toString());
+            } else {
+                return b.price.toString().localeCompare(a.price.toString());
+            }
+        });
+    }, [realEstateList, sortByPrice]);
 
     const filteredRealEstateList = sortedRealEstateList.filter(
         (realEstate) =>
