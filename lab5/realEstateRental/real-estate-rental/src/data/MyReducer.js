@@ -11,6 +11,18 @@ export const reducer = (state, action) => {
     const { type, payload } = action;
     switch (type) {
         case "add":
+            let alreadyAdded = false;
+            state.basket.forEach(element => {
+                if (element.id === payload.id) {
+                    alreadyAdded = true;
+                    return;
+                }
+            });
+            if (alreadyAdded) {
+                return {
+                    ...state,
+                };
+            }
             return {
                 ...state,
                 basket: [...state.basket, payload],

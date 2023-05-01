@@ -17,7 +17,7 @@ const RealEstateListItem = (props) => {
                         <Link to={`/selected-real-estate/${realEstate.id}`} state={{ realEstate: realEstate }}>
                             <button className="book-meeting-btn">Book meeting</button>
                         </Link>
-                        <button onClick={() => { dispatcher({ type: "add", payload: realEstate }); alert("Now you are following this real estate") }} className="book-meeting-btn">Follow</button>
+                        <button onClick={() => { dispatcher({ type: "add", payload: realEstate }); }} className="book-meeting-btn">Follow</button>
                     </div>
                     <div className="real-estate-bedrooms">{realEstate.bedrooms} sypialnie</div>
                     <div className="real-estate-description">{realEstate.description}</div>
