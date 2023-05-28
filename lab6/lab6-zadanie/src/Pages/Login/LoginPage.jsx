@@ -7,7 +7,7 @@ import RealEstateListPage from "../RealEstateList/RealEstateListPage";
 import { useNavigate } from "react-router-dom";
 import useLocalStorage from "../SharedComponents/UseLocalStorage";
 
-import { logInWithGoogle, useUser, logout } from "../../Firebase/userService"
+import { logInWithGoogle, logInWithFacebook, useUser, logout } from "../../Firebase/userService"
 
 
 const LoginPage = () => {
@@ -86,6 +86,7 @@ const LoginPage = () => {
 
     return <div className="app">
         <button onClick={logInWithGoogle}>Log with big G</button>
+        <button onClick={logInWithFacebook}>Log with Facebook</button>
     </div>
 
 };

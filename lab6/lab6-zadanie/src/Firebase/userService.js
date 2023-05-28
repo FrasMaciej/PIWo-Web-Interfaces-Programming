@@ -1,6 +1,7 @@
 import { auth } from "./init";
 import {
     GoogleAuthProvider,
+    FacebookAuthProvider,
     signInWithPopup,
     signOut
 } from "firebase/auth";
@@ -8,10 +9,21 @@ import {
 import { useState, useEffect } from "react";
 
 const googleProvider = new GoogleAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
 
 export const logInWithGoogle = async () => {
     try {
         const response = await signInWithPopup(auth, googleProvider);
+        const user = response.user;
+    } catch (err) {
+        console.error({ err });
+        alert(err.message);
+    }
+}
+
+export const logInWithFacebook = async () => {
+    try {
+        const response = await signInWithPopup(auth, facebookProvider);
         const user = response.user;
     } catch (err) {
         console.error({ err });
