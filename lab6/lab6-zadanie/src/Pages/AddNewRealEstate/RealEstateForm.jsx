@@ -1,11 +1,14 @@
 import { useState } from "react";
 import './RealEstateForm.css';
+import { addNewRealEstate } from "../../Firebase/realEstateService";
+import { useUser } from "../../Firebase/userService";
 
 const RealEstateForm = (props) => {
     const [city, setCity] = useState("");
     const [bedrooms, setBedrooms] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
+    const user = useUser();
 
 
     const handleCityChange = (event) => {
@@ -33,7 +36,8 @@ const RealEstateForm = (props) => {
             description,
             price,
         };
-        props.onAddRealEstate(newRealEstate);
+
+        addNewRealEstate(user, newRealEstate);
         setCity('');
         setBedrooms('');
         setDescription('');

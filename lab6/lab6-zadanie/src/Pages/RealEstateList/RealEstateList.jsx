@@ -1,13 +1,20 @@
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import RealEstateListItem from "./RealEstateListItem";
 import useLocalStorage from "../SharedComponents/UseLocalStorage";
+import { getRealEstates } from "../../Firebase/realEstateService";
 
 const RealEstateList = (props) => {
-    const realEstateList = props.realEstateList;
+    const [realEstateList, setRealEstateList] = useState([]);
     const [cityQuery, setCityQuery] = useState("");
     const [bedroomsQuery, setBedroomsQuery] = useState("");
     const [descriptionQuery, setDescriptionQuery] = useState("");
     const [sortByPrice, setSortByPrice] = useState("ASC");
+
+    useEffect(() => {
+        getRealEstates().then(response => {
+            setRealEstateList(response);
+        });
+    });
 
     const handleCityQueryChange = (event) => {
         setCityQuery(event.target.value);
