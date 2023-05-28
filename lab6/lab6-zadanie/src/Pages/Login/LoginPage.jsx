@@ -79,15 +79,21 @@ const LoginPage = () => {
     }, [user, setUserName]);
 
     if (user) {
-        return <div className="app">
-            <button onClick={logout_user}>Logout</button>
+        return <div className="app buttons">
+            <button className="button button-logout" onClick={logout_user}>Logout</button>
         </div>
     }
 
-    return <div className="app">
-        <button onClick={logInWithGoogle}>Log with big G</button>
-        <button onClick={logInWithFacebook}>Log with Facebook</button>
-    </div>
+    return (
+        <div className="app buttons">
+            <button className="button button-google" onClick={logInWithGoogle}>
+                Login with Google
+            </button>
+            <button className="button button-facebook" onClick={logInWithFacebook}>
+                Login with Facebook
+            </button>
+        </div>
+    );
 
 };
 
