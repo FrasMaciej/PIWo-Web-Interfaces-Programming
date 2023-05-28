@@ -1,0 +1,39 @@
+.login-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.form-single-field {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+}
+
+input {
+    width: 200px;
+    height: 25px;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.login-btn {
+    border-radius: 10px;
+    height: 35px;
+    cursor: pointer;
+    margin-top: -15px;
+    transition: all 0.2s ease;
+    font-size: 16px;
+}
+
+.login-btn:hover {
+    background-color: #87410f;
+    color: white;
+}
