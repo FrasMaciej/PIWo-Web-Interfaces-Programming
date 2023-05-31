@@ -1,5 +1,5 @@
 import { firestore } from "./init";
-import { collection, addDoc, Timestamp, query, where, getDocs } from 'firebase/firestore';
+import { collection, addDoc, Timestamp, query, where, getDocs, updateDoc, doc } from 'firebase/firestore';
 
 export const addNewRealEstate = async (user, content) => {
     try {
@@ -28,3 +28,13 @@ export const getRealEstates = async () => {
 
     return realEstates;
 }
+
+export const updateRealEstate = async (realEstateId, updatedContent) => {
+    try {
+        const realEstateRef = doc(firestore, "realEstates", realEstateId);
+        await updateDoc(realEstateRef, { content: updatedContent });
+        console.log("Ogłoszenie zostało zaktualizowane");
+    } catch (err) {
+        console.error(err);
+    }
+};

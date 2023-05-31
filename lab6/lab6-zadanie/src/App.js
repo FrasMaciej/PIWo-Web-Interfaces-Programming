@@ -7,6 +7,7 @@ import { BrowserRouter, Link, Route, Routes, NavLink } from 'react-router-dom';
 import RealEstateListPage from './Pages/RealEstateList/RealEstateListPage';
 import SelectedRealEstatePage from './Pages/SelectedRealEstate/SelectedRealEstatePage';
 import AddNewRealEstatePage from './Pages/AddNewRealEstate/AddNewRealEstatePage';
+import EditRealEstatePage from './Pages/EditRealEstate/EditRealEstatePage';
 import LoginPage from './Pages/Login/LoginPage';
 
 import axios from 'axios';
@@ -63,6 +64,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<LoginPage />} />
                 <Route path="/add-new-real-estate" element={<AddNewRealEstatePage onAddRealEstate={handleAddRealEstate} />} />
+                <Route path="/edit-real-estate/:id" element={<EditRealEstatePage />} />
                 <Route path="/selected-real-estate/:id" element={<SelectedRealEstatePage />} />
                 <Route path="/real-estates-list" element={<RealEstateListPage realEstateList={realEstateList} />} />
                 <Route path="/user-basket" element={<BasketPage />} />
