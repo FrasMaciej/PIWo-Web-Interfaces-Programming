@@ -85,4 +85,25 @@ button {
     margin: 10px;
 }
 
-.buttons {}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+}
+
+.button-email {
+    background-color: rgb(154, 78, 118);
+}
+
+.register-button {
+    background-color: rgb(75, 14, 47);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

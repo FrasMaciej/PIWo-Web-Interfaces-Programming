@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 import useLocalStorage from "../SharedComponents/UseLocalStorage";
 
 import { logInWithGoogle, logInWithFacebook, useUser, logout } from "../../Firebase/userService"
+import { logInWithEmail, updateDisplayName } from "../../Firebase/userService";
+import RegisterPage from "./RegisterPage";
 
 
 const LoginPage = () => {
@@ -65,6 +67,29 @@ const LoginPage = () => {
     const [userName, setUserName] = useContext(UserContext);
     const userContext = useContext(UserContext);
 
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    };
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    };
+
+    const handleEmailLogin = async () => {
+        try {
+            const user = await logInWithEmail(email, password);
+            if (user) {
+                await updateDisplayName("Some Display Name");
+                setUserName(user.displayName);
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
 
     const logout_user = () => {
         logout();
@@ -85,13 +110,24 @@ const LoginPage = () => {
     }
 
     return (
-        <div className="app buttons">
-            <button className="button button-google" onClick={logInWithGoogle}>
-                Login with Google
-            </button>
-            <button className="button button-facebook" onClick={logInWithFacebook}>
-                Login with Facebook
-            </button>
+        <div>
+            <div className="app buttons">
+                <h2>Logowanie</h2>
+                <div className="email-login flex">
+                    <input type="email" value={email} onChange={handleEmailChange} placeholder="Email" />
+                    <input type="password" value={password} onChange={handlePasswordChange} placeholder="Password" />
+                    <button className="button button-email" onClick={handleEmailLogin}>Login</button>
+                </div>
+            </div>
+            <div className="app buttons">
+                <button className="button button-google" onClick={logInWithGoogle}>
+                    Login with Google
+                </button>
+                <button className="button button-facebook" onClick={logInWithFacebook}>
+                    Login with Facebook
+                </button>
+            </div>
+            <RegisterPage />
         </div>
     );
 

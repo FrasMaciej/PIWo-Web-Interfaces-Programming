@@ -44,48 +44,55 @@ const RealEstateForm = (props) => {
         setPrice('');
     };
 
-    return (
-        <form onSubmit={handleSubmit} className="real-estate-form">
-            <h2>Add new real estate</h2>
-            <div className="form-group">
-                <label htmlFor="city">City:</label>
-                <input
-                    type="text"
-                    id="city"
-                    value={city}
-                    onChange={handleCityChange}
-                />
-            </div>
-            <div className="form-group">
-                <label htmlFor="bedrooms">Bedrooms number:</label>
-                <input
-                    type="number"
-                    id="bedrooms"
-                    value={bedrooms}
-                    onChange={handleBedroomsChange}
-                />
-            </div>
-            <div className="form-group">
-                <label htmlFor="description">Price:</label>
-                <input
-                    type="number"
-                    id="price"
-                    value={price}
-                    onChange={handlePriceChange}
-                />
-            </div>
-            <div className="form-group">
-                <label htmlFor="description">Description:</label>
-                <textarea
-                    id="description"
-                    value={description}
-                    onChange={handleDescriptionChange}
-                />
-            </div>
+    if (user) {
+        return (
+            <form onSubmit={handleSubmit} className="real-estate-form">
+                <h2>Add new real estate</h2>
+                <div className="form-group">
+                    <label htmlFor="city">City:</label>
+                    <input
+                        type="text"
+                        id="city"
+                        value={city}
+                        onChange={handleCityChange}
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="bedrooms">Bedrooms number:</label>
+                    <input
+                        type="number"
+                        id="bedrooms"
+                        value={bedrooms}
+                        onChange={handleBedroomsChange}
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="description">Price:</label>
+                    <input
+                        type="number"
+                        id="price"
+                        value={price}
+                        onChange={handlePriceChange}
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="description">Description:</label>
+                    <textarea
+                        id="description"
+                        value={description}
+                        onChange={handleDescriptionChange}
+                    />
+                </div>
 
-            <button type="submit">Dodaj</button>
-        </form>
-    );
+                <button type="submit">Dodaj</button>
+            </form>
+        );
+    } else {
+        return <div className="info">
+            Dodawanie nieruchomości jest możliwe tylko dla zalogowanych użytkowników
+        </div>
+    }
+
 
 };
 

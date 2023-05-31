@@ -62,3 +62,12 @@
 .real-estate-form button[type="submit"]:hover {
     background-color: #0066CC;
 }
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cc000a;
+    font-size: 20px;
+    font-weight: 700;
+}
