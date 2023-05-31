@@ -82,7 +82,6 @@ const LoginPage = () => {
         try {
             const user = await logInWithEmail(email, password);
             if (user) {
-                await updateDisplayName("Some Display Name");
                 setUserName(user.displayName);
             }
         } catch (err) {

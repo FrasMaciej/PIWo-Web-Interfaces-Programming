@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { registerWithEmail } from "../../Firebase/userService";
 import './LoginPage.css';
+import UserContext from "../../data/UserContext";
 
 const RegisterPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [displayName, setDisplayName] = useState("");
+    const [userName, setUserName] = useContext(UserContext);
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -24,16 +26,15 @@ const RegisterPage = () => {
 
         try {
             await registerWithEmail(email, password, displayName);
-            // Zarejestrowano pomyślnie, możesz wykonać odpowiednie akcje (np. przekierowanie)
+            setUserName(displayName);
         } catch (error) {
             console.error("Błąd rejestracji:", error);
-            // Obsłuż błąd rejestracji
         }
     };
 
     return (
         <div>
-            <h2 className="center"></h2>
+            <h2 className="center">Rejestracja</h2>
             <form className="flex" onSubmit={handleRegister}>
                 <div>
                     <input type="email" value={email} onChange={handleEmailChange} placeholder="Email" required />

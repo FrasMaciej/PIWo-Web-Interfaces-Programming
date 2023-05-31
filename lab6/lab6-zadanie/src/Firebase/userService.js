@@ -66,7 +66,6 @@ export const updateDisplayName = async (displayName) => {
     try {
         const user = auth.currentUser;
         await updateProfile(user, { displayName });
-        console.log("DisplayName został zaktualizowany.");
     } catch (err) {
         console.error({ err });
         alert(err.message);
@@ -77,10 +76,7 @@ export const registerWithEmail = async (email, password, displayName) => {
     try {
         const response = await createUserWithEmailAndPassword(auth, email, password);
         const user = response.user;
-
-        await updateProfile(user, { displayName });
-
-        console.log("Użytkownik został zarejestrowany:", user);
+        await updateProfile(user, { displayName: displayName });
         return user;
     } catch (err) {
         console.error({ err });
@@ -92,7 +88,6 @@ export const linkFacebookToExistingAccount = async (user) => {
     try {
         const credential = await facebookProvider.credentialFromError(user);
         await linkWithCredential(user, credential);
-        console.log("Konto Facebook zostało powiązane z istniejącym kontem.");
     } catch (err) {
         console.error({ err });
         alert(err.message);
