@@ -6,7 +6,8 @@ import {
     signOut,
     updateProfile,
     signInWithEmailAndPassword,
-    createUserWithEmailAndPassword
+    createUserWithEmailAndPassword,
+    linkWithCredential
 } from "firebase/auth";
 
 import { useState, useEffect } from "react";
@@ -28,6 +29,7 @@ export const logInWithFacebook = async () => {
     try {
         const response = await signInWithPopup(auth, facebookProvider);
         const user = response.user;
+        await linkFacebookToExistingAccount(user);
     } catch (err) {
         console.error({ err });
 
@@ -85,6 +87,17 @@ export const registerWithEmail = async (email, password, displayName) => {
         alert(err.message);
     }
 }
+
+export const linkFacebookToExistingAccount = async (user) => {
+    try {
+        const credential = await facebookProvider.credentialFromError(user);
+        await linkWithCredential(user, credential);
+        console.log("Konto Facebook zostało powiązane z istniejącym kontem.");
+    } catch (err) {
+        console.error({ err });
+        alert(err.message);
+    }
+};
 
 export const logout = () => {
     signOut(auth);
