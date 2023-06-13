@@ -1,6 +1,5 @@
 FROM node:19
 
-
 RUN mkdir -p /app
 
 COPY ./package.json /app/
